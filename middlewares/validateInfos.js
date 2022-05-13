@@ -6,7 +6,7 @@ function validateInfos(req, res, next) {
   if (!infos.saleDate)
     return res.status(400).json({ message: 'Sale date is required!' });
 
-  if (!infos.warrantyPeriod)
+  if (infos.warrantyPeriod === undefined)
     return res.status(400).json({ message: 'Warranty period is required!' });
 
   next();

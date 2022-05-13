@@ -3,6 +3,7 @@ const {
   validateProductName,
   validateInfos,
   validateSaleDate,
+  validateWarrantyPeriod,
 } = require('../middlewares/index');
 const router = express.Router();
 
@@ -11,7 +12,8 @@ router.post(
   validateProductName,
   validateInfos,
   validateSaleDate,
-  (req, res) => {
+  validateWarrantyPeriod,
+  (_req, res) => {
     res.status(201).json({ message: 'Sale created successfully!' });
   }
 );
