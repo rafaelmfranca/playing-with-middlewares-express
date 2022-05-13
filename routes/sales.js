@@ -4,8 +4,11 @@ const {
   validateInfos,
   validateSaleDate,
   validateWarrantyPeriod,
+  authMiddleware,
 } = require('../middlewares/index');
 const router = express.Router();
+
+router.use(authMiddleware);
 
 router.post(
   '/',
