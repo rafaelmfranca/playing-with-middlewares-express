@@ -1,8 +1,8 @@
 const express = require('express');
-const validateProductName = require('../middlewares/validateProductName');
+const { validateProductName, validateInfos } = require('../middlewares/index');
 const router = express.Router();
 
-router.post('/', validateProductName, (req, res) => {
+router.post('/', validateProductName, validateInfos, (req, res) => {
   res.status(201).json({ message: 'Sale created successfully!' });
 });
 
